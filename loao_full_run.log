@@ -1,0 +1,146 @@
+D:\turstproject\TAS-VANET\TAS-VANET\.venv\lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+  warnings.warn(
+D:\turstproject\TAS-VANET\TAS-VANET\.venv\lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+  warnings.warn(
+D:\turstproject\TAS-VANET\TAS-VANET\.venv\lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+  warnings.warn(
+======================================================================
+Novel-Attack Generalization Test (Leave-One-Attack-Type-Out)
+======================================================================
+Pool: 88,029 rows, 14 features
+Attack types tested: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+Loaded TAS-VANET architecture from D:\turstproject\TAS-VANET\TAS-VANET\results\models\final_tas_vanet\sae_config.json: hidden_dims=[64, 15] lr=0.01000 rho=0.170 beta=0.619
+Legitimate pool: 33,120 train / 14,193 eval
+
+Training TAS-VANET (one-class) once on legitimate-only data ...
+  done in 28s  (threshold tau=0.055481)
+
+[attack 1] held out (1,066 samples) — train=72,770 eval=15,259
+  TAS-VANET (one-class, no attack labels)       F1=0.1429  R=0.1538
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.7254  R=0.9109
+  Random Forest                                 F1=0.8284  R=0.9916
+  MLP                                           F1=0.7112  R=0.8283
+  fold done in 196s
+
+[attack 2] held out (1,091 samples) — train=72,745 eval=15,284
+  TAS-VANET (one-class, no attack labels)       F1=0.0655  R=0.0669
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.0594  R=0.0486
+  Random Forest                                 F1=0.0492  R=0.0348
+  MLP                                           F1=0.0666  R=0.0596
+  fold done in 2938s
+
+[attack 3] held out (1,041 samples) — train=72,795 eval=15,234
+  TAS-VANET (one-class, no attack labels)       F1=0.5816  R=0.8300
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.7358  R=0.9990
+  Random Forest                                 F1=0.8241  R=0.9971
+  MLP                                           F1=0.7740  R=1.0000
+  fold done in 3431s
+
+[attack 4] held out (1,033 samples) — train=72,803 eval=15,226
+  TAS-VANET (one-class, no attack labels)       F1=0.1604  R=0.1772
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.6991  R=0.7783
+  Random Forest                                 F1=0.6183  R=0.6263
+  MLP                                           F1=0.7193  R=0.8596
+  fold done in 278s
+
+[attack 5] held out (1,046 samples) — train=72,790 eval=15,239
+  TAS-VANET (one-class, no attack labels)       F1=0.2488  R=0.2868
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.6360  R=0.9665
+  Random Forest                                 F1=0.7927  R=0.9340
+  MLP                                           F1=0.7375  R=0.9656
+  fold done in 245s
+
+[attack 6] held out (1,078 samples) — train=72,758 eval=15,271
+  TAS-VANET (one-class, no attack labels)       F1=0.0789  R=0.0816
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.5646  R=0.8534
+  Random Forest                                 F1=0.6980  R=0.7449
+  MLP                                           F1=0.6763  R=0.8275
+  fold done in 269s
+
+[attack 7] held out (1,029 samples) — train=72,807 eval=15,222
+  TAS-VANET (one-class, no attack labels)       F1=0.3200  R=0.3878
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.8280  R=0.9776
+  Random Forest                                 F1=0.8116  R=0.9776
+  MLP                                           F1=0.7432  R=0.9874
+  fold done in 256s
+
+[attack 8] held out (1,051 samples) — train=72,785 eval=15,244
+  TAS-VANET (one-class, no attack labels)       F1=0.1081  R=0.1151
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.6864  R=0.6394
+  Random Forest                                 F1=0.6756  R=0.7203
+  MLP                                           F1=0.6544  R=0.7774
+  fold done in 1573s
+
+[attack 9] held out (1,088 samples) — train=72,748 eval=15,281
+  TAS-VANET (one-class, no attack labels)       F1=0.1270  R=0.1342
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.5006  R=0.7803
+  Random Forest                                 F1=0.7631  R=0.8704
+  MLP                                           F1=0.4284  R=0.4081
+  fold done in 279s
+
+[attack 10] held out (1,081 samples) — train=72,755 eval=15,274
+  TAS-VANET (one-class, no attack labels)       F1=0.5734  R=0.7983
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.7225  R=0.9584
+  Random Forest                                 F1=0.8149  R=0.9630
+  MLP                                           F1=0.6964  R=0.9593
+  fold done in 241s
+
+[attack 11] held out (1,089 samples) — train=72,747 eval=15,282
+  TAS-VANET (one-class, no attack labels)       F1=0.4072  R=0.5060
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.6186  R=0.7796
+  Random Forest                                 F1=0.7159  R=0.7741
+  MLP                                           F1=0.6274  R=0.7769
+  fold done in 1137s
+
+[attack 12] held out (1,063 samples) — train=72,773 eval=15,256
+  TAS-VANET (one-class, no attack labels)       F1=0.1042  R=0.1101
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.4726  R=0.5061
+  Random Forest                                 F1=0.5346  R=0.5127
+  MLP                                           F1=0.4755  R=0.4986
+  fold done in 305s
+
+[attack 13] held out (7,685 samples) — train=66,151 eval=21,878
+  TAS-VANET (one-class, no attack labels)       F1=0.4135  R=0.2968
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.5313  R=0.3843
+  Random Forest                                 F1=0.6670  R=0.5114
+  MLP                                           F1=0.6026  R=0.4505
+  fold done in 246s
+
+[attack 14] held out (7,496 samples) — train=66,340 eval=21,689
+  TAS-VANET (one-class, no attack labels)       F1=0.9232  R=0.9792
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.9650  R=1.0000
+  Random Forest                                 F1=0.9717  R=1.0000
+  MLP                                           F1=0.9621  R=1.0000
+  fold done in 182s
+
+[attack 15] held out (7,495 samples) — train=66,341 eval=21,688
+  TAS-VANET (one-class, no attack labels)       F1=0.8895  R=0.9149
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.9542  R=0.9891
+  Random Forest                                 F1=0.9699  R=0.9920
+  MLP                                           F1=0.9614  R=0.9895
+  fold done in 3404s
+
+[attack 16] held out (5,015 samples) — train=68,821 eval=19,208
+  TAS-VANET (one-class, no attack labels)       F1=0.6367  R=0.5663
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.7682  R=0.6776
+  Random Forest                                 F1=0.7896  R=0.7013
+  MLP                                           F1=0.7361  R=0.6584
+  fold done in 2971s
+
+[attack 17] held out (243 samples) — train=73,593 eval=14,436
+  TAS-VANET (one-class, no attack labels)       F1=0.1641  R=0.4815
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.1706  R=0.3251
+  Random Forest                                 F1=0.2237  R=0.3457
+  MLP                                           F1=0.1990  R=0.4239
+  fold done in 90105s
+
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\novel_attack_generalization.csv
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\novel_attack_generalization_summary.csv
+
+======================================================================
+SUMMARY — mean ± std F1 across all held-out (unseen) attack types
+======================================================================
+  TAS-VANET (one-class, no attack labels)       F1=0.3497 ± 0.2807
+  TAS-VANET (SAE+WOA, supervised head)          F1=0.6258 ± 0.2378
+  Random Forest                                 F1=0.6911 ± 0.2385
+  MLP                                           F1=0.6336 ± 0.2327

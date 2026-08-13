@@ -1,0 +1,210 @@
+======================================================================
+TAS-VANET Full Training Pipeline
+======================================================================
+  CV folds:  10 × 1 seeds = 10 total folds
+  WOA (CV):  pop=10 gen=10 subsample=5000
+  WOA (final): pop=20 gen=30
+  SAE epochs (CV / final): 75 / 200
+
+--- Loading data ---
+Loading veremi_train_processed.csv ... 72,600 rows
+Loading veremi_test_processed.csv  ... 15,429 rows
+  Dropped 8 zero-variance features: ['acc_conf_x_curr', 'acc_conf_y_curr', 'head_conf_x_curr', 'head_conf_y_curr', 'pos_conf_x_curr', 'pos_conf_y_curr', 'spd_conf_x_curr', 'spd_conf_y_curr']
+  Effective features: 14
+Train: (72600, 14)  labels: [39485 33115]
+Test : (15429, 14)   labels: [7828 7601]
+
+--- Cross-Validation ---
+
+[1/10] seed=0 fold=1 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8768  (426s)
+  SAE only  ... F1=0.8084  (58s)
+  RF        ... F1=0.9195  (7s)
+  SVM       ... F1=0.7958  (14s)
+  MLP       ... F1=0.9153  (148s)
+  Fold done in 653s
+
+[2/10] seed=0 fold=2 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8725  (423s)
+  SAE only  ... F1=0.8021  (58s)
+  RF        ... F1=0.9207  (6s)
+  SVM       ... F1=0.7870  (14s)
+  MLP       ... F1=0.9064  (114s)
+  Fold done in 616s
+
+[3/10] seed=0 fold=3 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8702  (464s)
+  SAE only  ... F1=0.8069  (60s)
+  RF        ... F1=0.9131  (7s)
+  SVM       ... F1=0.7875  (15s)
+  MLP       ... F1=0.9049  (116s)
+  Fold done in 661s
+
+[4/10] seed=0 fold=4 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8606  (433s)
+  SAE only  ... F1=0.7876  (58s)
+  RF        ... F1=0.9124  (6s)
+  SVM       ... F1=0.7792  (13s)
+  MLP       ... F1=0.8866  (70s)
+  Fold done in 581s
+
+[5/10] seed=0 fold=5 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8695  (454s)
+  SAE only  ... F1=0.8136  (58s)
+  RF        ... F1=0.9119  (6s)
+  SVM       ... F1=0.7801  (13s)
+  MLP       ... F1=0.8965  (104s)
+  Fold done in 635s
+
+[6/10] seed=0 fold=6 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8594  (459s)
+  SAE only  ... F1=0.8180  (62s)
+  RF        ... F1=0.9188  (6s)
+  SVM       ... F1=0.7817  (14s)
+  MLP       ... F1=0.8988  (133s)
+  Fold done in 675s
+
+[7/10] seed=0 fold=7 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8534  (454s)
+  SAE only  ... F1=0.8126  (59s)
+  RF        ... F1=0.9120  (6s)
+  SVM       ... F1=0.7879  (13s)
+  MLP       ... F1=0.8632  (25s)
+  Fold done in 559s
+
+[8/10] seed=0 fold=8 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8717  (456s)
+  SAE only  ... F1=0.8235  (58s)
+  RF        ... F1=0.9199  (7s)
+  SVM       ... F1=0.7823  (15s)
+  MLP       ... F1=0.9045  (150s)
+  Fold done in 685s
+
+[9/10] seed=0 fold=9 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8760  (419s)
+  SAE only  ... F1=0.8010  (56s)
+  RF        ... F1=0.9160  (7s)
+  SVM       ... F1=0.7861  (13s)
+  MLP       ... F1=0.8831  (103s)
+  Fold done in 597s
+
+[10/10] seed=0 fold=10 (train=65,340 val=7,260)
+  TAS-VANET ... F1=0.8705  (426s)
+  SAE only  ... F1=0.8126  (57s)
+  RF        ... F1=0.9155  (6s)
+  SVM       ... F1=0.7958  (12s)
+  MLP       ... F1=0.8879  (51s)
+  Fold done in 553s
+
+CV complete in 103.6 min
+CV results saved to D:\turstproject\TAS-VANET\TAS-VANET\results\tables\cv_raw.csv
+
+======================================================================
+Final model: training on full train set
+======================================================================
+
+TAS-VANET (WOA + SAE) ...
+  Gen  0: best_fitness=0.13537
+  Gen  5: best_fitness=0.13333  mean=0.26009
+  Gen 10: best_fitness=0.13059  mean=0.20049
+  Gen 15: best_fitness=0.12865  mean=0.22175
+  Gen 20: best_fitness=0.12846  mean=0.13334
+  Gen 25: best_fitness=0.12826  mean=0.13202
+  Gen 30: best_fitness=0.12824  mean=0.12894
+Best hyperparams: {'h1_size': 64, 'h2_size': 15, 'learning_rate': 0.01, 'sparsity_rho': 0.17042255126596764, 'sparsity_beta': 0.6194639193835364}
+Training final SAE on 72,600 samples (200 epochs) ...
+  Epoch   1/200: train_loss=1.01037  val_recon=0.02416  val_cls=0.48566
+  Epoch  11/200: train_loss=0.54447  val_recon=0.00771  val_cls=0.43664
+  Epoch  21/200: train_loss=0.52213  val_recon=0.00367  val_cls=0.42141
+  Epoch  31/200: train_loss=0.48328  val_recon=0.00355  val_cls=0.42453
+  Epoch  41/200: train_loss=0.43736  val_recon=0.00307  val_cls=0.36695
+  Epoch  51/200: train_loss=0.41433  val_recon=0.00285  val_cls=0.37648
+  Epoch  61/200: train_loss=0.40003  val_recon=0.00231  val_cls=0.35640
+  Epoch  71/200: train_loss=0.38845  val_recon=0.00246  val_cls=0.33651
+  Epoch  81/200: train_loss=0.38115  val_recon=0.00199  val_cls=0.33363
+  Epoch  91/200: train_loss=0.37452  val_recon=0.00223  val_cls=0.32161
+  Epoch 101/200: train_loss=0.36579  val_recon=0.00195  val_cls=0.32028
+  Epoch 111/200: train_loss=0.36183  val_recon=0.00196  val_cls=0.32091
+  Epoch 121/200: train_loss=0.35603  val_recon=0.00180  val_cls=0.33020
+  Epoch 131/200: train_loss=0.35497  val_recon=0.00175  val_cls=0.32072
+  Epoch 141/200: train_loss=0.35157  val_recon=0.00166  val_cls=0.31887
+  Epoch 151/200: train_loss=0.34742  val_recon=0.00167  val_cls=0.30086
+  Epoch 161/200: train_loss=0.34386  val_recon=0.00163  val_cls=0.28416
+  Epoch 171/200: train_loss=0.34281  val_recon=0.00146  val_cls=0.31503
+  Epoch 181/200: train_loss=0.34139  val_recon=0.00159  val_cls=0.30947
+  Epoch 191/200: train_loss=0.33970  val_recon=0.00145  val_cls=0.30039
+  Epoch 200/200: train_loss=0.33920  val_recon=0.00152  val_cls=0.30790
+
+SAE only (fixed hyperparameters) ...
+
+Random Forest ...
+
+SVM (RBF) ...
+
+MLP ...
+
+Per-attack-type breakdown (TAS-VANET, held-out test) ...
+  attack  1: F1=0.4637  n=8,013
+  attack  2: F1=0.0297  n=8,017
+  attack  3: F1=0.4668  n=8,008
+  attack  4: F1=0.3662  n=7,991
+  attack  5: F1=0.4573  n=8,007
+  attack  6: F1=0.4199  n=8,007
+  attack  7: F1=0.4447  n=7,997
+  attack  8: F1=0.4194  n=8,008
+  attack  9: F1=0.3983  n=7,995
+  attack 10: F1=0.4579  n=8,006
+  attack 11: F1=0.3666  n=8,017
+  attack 12: F1=0.3009  n=8,013
+  attack 13: F1=0.5116  n=9,369
+  attack 14: F1=0.8808  n=9,340
+  attack 15: F1=0.8664  n=9,295
+  attack 16: F1=0.6911  n=8,723
+  attack 17: F1=0.1146  n=7,864
+  attack 19: F1=0.0144  n=7,835
+
+--- Statistical Tests ---
+
+--- Saving Results ---
+
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\cv_raw.csv
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\summary.csv
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\stats.csv
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\final_test.csv
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\per_attack.csv
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\models\final_tas_vanet/
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\models\norm_params.json
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\models\woa_history.json
+Saved: D:\turstproject\TAS-VANET\TAS-VANET\results\tables\table_latex.tex
+
+======================================================================
+CROSS-VALIDATION SUMMARY  (mean ± std over all folds)
+======================================================================
+Method                         Precision    Recall        F1       AUC
+----------------------------------------------------------------------
+  TAS-VANET (SAE+WOA)         0.9348±0.0212  0.8109±0.0187  0.8681±0.0073  0.9307±0.0044
+  SAE only (no WOA)           0.9047±0.0262  0.7324±0.0282  0.8086±0.0095  0.8889±0.0177
+  Random Forest               0.9749±0.0034  0.8638±0.0053  0.9160±0.0034  0.9540±0.0020
+  SVM (RBF)                   0.9353±0.0089  0.6783±0.0066  0.7863±0.0056  0.8746±0.0053
+  MLP                         0.9506±0.0153  0.8452±0.0174  0.8947±0.0142  0.9441±0.0072
+
+======================================================================
+HELD-OUT TEST SET RESULTS
+======================================================================
+  TAS-VANET (SAE+WOA)         P=0.9367  R=0.7938  F1=0.8594  AUC=0.9278
+  SAE only (no WOA)           P=0.9062  R=0.6599  F1=0.7637  AUC=0.8832
+  Random Forest               P=0.9792  R=0.7725  F1=0.8637  AUC=0.9137
+  SVM (RBF)                   P=0.9668  R=0.5979  F1=0.7389  AUC=0.8633
+  MLP                         P=0.9429  R=0.7685  F1=0.8468  AUC=0.9240
+
+======================================================================
+STATISTICAL TESTS  (TAS-VANET vs each baseline, Wilcoxon one-sided)
+======================================================================
+  vs SAE only (no WOA)           p=0.0010 ***  d=+4.679
+  vs Random Forest               p=1.0000 ns   d=-7.055
+  vs SVM (RBF)                   p=0.0010 ***  d=+10.651
+  vs MLP                         p=1.0000 ns   d=-2.297
+
+======================================================================
+Done. Next step: python scripts/06_generate_figures.py
+======================================================================

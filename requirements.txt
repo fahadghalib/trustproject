@@ -1,0 +1,19 @@
+# TAS-VANET dependencies
+# Tested with Python 3.9, 3.10, 3.11, 3.12
+
+# Core scientific stack
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+matplotlib>=3.7
+
+# Deep learning (PyTorch)
+# For CPU-only on macOS/Linux/Windows the default install works.
+# For GPU support, follow https://pytorch.org/get-started/locally/
+torch>=2.0
+
+# Excel file reading (for legacy F2MD .xlsx samples)
+openpyxl>=3.1
+
+# Optional but recommended
+tqdm>=4.65         # progress bars
