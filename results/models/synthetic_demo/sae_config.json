@@ -1,0 +1,13 @@
+{
+  "input_dim": 4,
+  "hidden_dims": [
+    29,
+    6
+  ],
+  "learning_rate": 0.01,
+  "sparsity_target": 0.13770127501508664,
+  "sparsity_weight": 3.6212503922449506,
+  "epochs": 150,
+  "batch_size": 64,
+  "seed": 42
+}

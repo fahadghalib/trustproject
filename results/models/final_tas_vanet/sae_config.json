@@ -1,0 +1,16 @@
+{
+  "input_dim": 14,
+  "hidden_dims": [
+    128,
+    29
+  ],
+  "learning_rate": 0.028938835523026757,
+  "sparsity_target": 0.23593030011530508,
+  "sparsity_weight": 0.13450321311968055,
+  "epochs": 200,
+  "batch_size": 256,
+  "seed": 0,
+  "use_classifier_head": true,
+  "classifier_weight": 1.5,
+  "hidden_activation": "sigmoid"
+}
